@@ -1,0 +1,6 @@
+<app-todo-tasks (updateItem)="updateItem($event)" [tasks]="todoTasks"></app-todo-tasks>
+<app-doing-tasks (updateItem)="updateItem($event)" [tasks]="doingTasks"></app-doing-tasks>
+<app-done-tasks (deleteItem)="deleteItem($event)" [tasks]="doneTasks"></app-done-tasks>
+<app-aborted-tasks (deleteItem)="deleteItem($event)" [tasks]="abortedTasks"></app-aborted-tasks>
+
+<button md-tolltip="add!" md-fab class="float-button" (click)="openAddDialog()"><md-icon>add</md-icon></button>

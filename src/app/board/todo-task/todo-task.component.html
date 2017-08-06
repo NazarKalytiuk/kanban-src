@@ -1,0 +1,20 @@
+<md-card>
+  <md-card-title>{{ task?.name }}</md-card-title>
+  <hr [class]="getPriorityClass()">
+  <md-card-content>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <md-input-container>
+        <textarea placeholder="Description" formControlName="description" mdInput></textarea>
+      </md-input-container>
+        <md-select placeholder="Priority" formControlName="priorityField" color="getPriorityColor()">
+      <md-option *ngFor="let p of priorityKeys" [value]="priority[p]">{{ priority[priority[p]] }}</md-option>
+    </md-select>
+    <button md-button type="submit">SAVE</button>
+    </form>
+    <p> {{ task?.creationTime | date:'medium' }} </p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-icon-button color='accent' mdTooltip="Start doing!" (click)="startDoing()"><md-icon>forward</md-icon></button>
+    <button md-icon-button color='warn' mdTooltip="Abort!" (click)="abort()"><md-icon>clear</md-icon></button>
+  </md-card-actions>
+</md-card>

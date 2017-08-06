@@ -1,0 +1,12 @@
+<md-card>
+  <md-card-title>{{ task?.name }}</md-card-title>
+  <hr [class]="getPriorityClass()">
+  <md-card-content>
+    <p> {{ task?.description }} </p>
+    <p> {{ priority[task?.priority] }} priority</p>
+    <p> {{ task?.creationTime | date:'medium' }} </p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-icon-button color='warn' mdTooltip="Delete!" (click)="onDelete()"><md-icon>delete</md-icon></button>
+  </md-card-actions>
+</md-card>

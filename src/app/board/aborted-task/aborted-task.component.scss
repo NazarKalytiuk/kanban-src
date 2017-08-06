@@ -1,0 +1,21 @@
+:host {
+  width: 100%;
+}
+md-card-actions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end
+}
+hr {
+    height: 5px;
+    border: none;
+}
+.low {
+    background: #969696;
+}
+.normal {
+    background: #459812;
+}
+.high {
+    background: red;
+}

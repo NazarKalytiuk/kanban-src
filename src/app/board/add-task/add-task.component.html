@@ -1,0 +1,12 @@
+<form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+  <md-input-container>
+    <input placeholder="Name" formControlName="name" mdInput>
+  </md-input-container>
+  <md-input-container>
+    <textarea placeholder="Description" formControlName="description" mdInput></textarea>
+  </md-input-container>
+  <md-select placeholder="Priority" formControlName="priorityField" color="getPriorityColor()">
+    <md-option *ngFor="let p of priorityKeys" [value]="priority[p]">{{ priority[priority[p]] }}</md-option>
+  </md-select>
+  <button md-raised-button color='accent' type="submit">SAVE</button>
+</form>
